@@ -1,0 +1,52 @@
+
+.boutton{
+    display:flex;
+    align-content:flex-end;
+    background-color:#b50d0d;
+    margin: 20px 0px 20px 20px;
+}
+
+
+ /*Css partie liste des tuteurs*/ 
+ .stable{
+	text-align: center;
+}
+
+
+.stable1{
+	
+	background-color: #b50d0d;
+	color: white;
+	text-align: center;
+}
+
+.sbouton1{
+	display: flex;
+	justify-content:flex-end;
+}
+.btn-dangereux {
+    color: 
+	#fff;
+	background-color:
+	lightgreen;
+	border-color:
+	lightgreen;
+	
+}
+
+.sbouton2{
+  display: flex;
+  justify-content:flex-end;
+	margin-right: 10px;
+	padding: 0.5em;
+	color: white;
+	
+
+
+}
+
+#p2{
+    font-family: algerian, Verdana, sans-serif;
+    text-align: center;
+  }
+

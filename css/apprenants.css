@@ -1,0 +1,75 @@
+
+
+.form-controlb{
+	display: flex;
+	flex-direction: row;
+	width: 70%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color:#495057;
+	background-color:#fff;
+	background-clip: padding-box;
+	
+}
+.buttonap{
+  margin: 20px 0px 20px 0px;
+	display: flex;
+	justify-content: flex-end;
+
+}
+.btn-danger {
+    color: 
+	#fff;
+	background-color:
+	#b50d0d;
+	border-color:
+	#b50d0d;
+	margin-right: 5px;
+}
+
+.btn-dangereux {
+    color: 
+	#fff;
+	background-color:
+	lightgreen;
+	border-color:
+	lightgreen;
+	
+}
+#photo{
+	border: 1px solid black;
+	width: 200px;
+	height: 200px;
+
+}
+.iconapp{
+	width: 200px;
+	height: 200px;
+}
+
+.photo-lab{
+	margin-left: 5px;
+}
+
+th{
+	color: white;
+	background-color: #b50d0d;
+}
+.photoapprenant{
+	cursor: pointer;
+	
+
+}
+
+.photoapprenant:hover{
+	border:3px solid #b50d0d;
+	width: 	2em;
+	height: 2em;
+	
+}
+.lienPhoto{
+	display: none;
+}

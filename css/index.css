@@ -1,0 +1,139 @@
+body{
+	background-color: #F1F8F6;
+}
+@keyframes ani1 {
+  from{position: relative;bottom: 100%;}
+  to{position: relative;bottom: 0;}
+}
+
+.container{
+	margin-top:5vh;
+	padding-top:10px; 
+	background-color: white;
+}
+#banniere{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: #b50d0d;
+	height:55vh;
+}
+#banniere img{
+	width: 95%;
+	height: 90%;
+}
+#footer{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: #b50d0d;
+	height: 8vh;
+	margin: 30px 0px 10px 0px;
+}
+
+.logo{
+	width: 150px;
+    height: 50px;
+}
+
+#global{
+  margin:15px 0px 15px 0px;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.navbar{
+	background-color: #b50d0d;
+}
+.menu-nav{
+	display: flex;
+	justify-content: space-around;
+	height: 100%;
+	width: 68%;
+	align-content: space-around;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+.fils{
+  display:flex;
+  flex-direction: column;
+	width: 100%;
+	height: auto;
+	position: relative;
+	animation: ani1 1s ease-out;
+	overflow: auto;
+}
+
+#formulaire{
+	display:flex;
+    flex-direction: column;
+	width: 100%;
+	height: auto;
+	position: relative;
+	animation: ani1 1s ease-out;
+}
+.menu-nav a{
+	color: #000; 
+	text-decoration: none;
+}
+#actif{
+	background-color: black;
+	color: white;
+}
+#actif a{
+	color: white;
+}
+#search{
+	width: 310px;
+	margin: 0;
+
+}
+#bienvenu{
+	text-align: center;
+	font-family: 	Algerian;
+	text-transform: uppercase;
+	margin:20px;
+}
+.menu-nav li{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 150px;
+    height: 50px;
+	background-color: white;
+
+}
+.menu-nav li:hover{
+	color: white;
+	background-color: rgba(0,0,0,0.5);
+}
+.menu-nav li:hover a{
+	color: white;
+}
+
+@media screen and (max-width:990px){
+	.menu-nav{
+	display: flex;
+	flex-direction: column;
+}
+.menu-nav li{
+	margin-top:1em;
+}
+
+#bienvenu{
+	font-size: 18px;
+}
+}
+
+
+.card-text{
+	color:#b50d0d;
+	font-size: 2em, 
+	text-transform:uppercase;
+
+}
