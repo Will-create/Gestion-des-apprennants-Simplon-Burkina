@@ -19,7 +19,7 @@
 		document.getElementById(idElm).innerHTML=': '+content; 
 	}
 	function rf(idElm, content){
-		return document.getElementById(idElm).src=content+'.jpg';
+document.getElementById(idElm).src=content;
 	}
 
 
@@ -45,7 +45,7 @@
         r('contacttut',_contactTut);
         rf('photoApprenant',_photo);
 		afficher('details');
-		console.log(_photo);
+alert(_photo);
 
 
 		
