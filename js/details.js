@@ -26,7 +26,7 @@ document.getElementById(idElm).src=content;
     var titre=document.getElementById('titreAp');
 	function detailApprenant(nom,prenom,date_naiss,genre,_ville,_formation,_etabliss,_nomTut,_prenomTut,_contact,_genreTut,_professionTut,_contactTut,_photo){
 	 
-if (genre=='Femme'){
+if (genre=='Femme' || genre=='Feminin'){
   titre.innerHTML='Apprenante';
 }
 
