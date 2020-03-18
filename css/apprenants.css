@@ -58,6 +58,11 @@ th{
 	color: white;
 	background-color: #b50d0d;
 }
+tr:hover{
+  color: white;
+  background-color: #b50d0d;
+  opacity: .;
+}
 .photoapprenant{
 	cursor: pointer;
 	

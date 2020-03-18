@@ -23,10 +23,12 @@ document.getElementById(idElm).src=content;
 	}
 
 
-    
+    var titre=document.getElementById('titreAp');
 	function detailApprenant(nom,prenom,date_naiss,genre,_ville,_formation,_etabliss,_nomTut,_prenomTut,_contact,_genreTut,_professionTut,_contactTut,_photo){
 	 
-
+if (genre=='Femme'){
+  titre.innerHTML='Apprenante';
+}
 
 
         r('nom', nom);
@@ -45,32 +47,15 @@ document.getElementById(idElm).src=content;
         r('contacttut',_contactTut);
         rf('photoApprenant',_photo);
 		afficher('details');
-alert(_photo);
+
 
 
 		
 	}
 	
 	
-	
-var css = '@page { size: landscape; }',
-    head = document.head || document.getElementsByTagName('head')[0],
-    style = document.createElement('style');
-
-style.type = 'text/css';
-style.media = 'print';
-
-if (style.styleSheet){
-  style.styleSheet.cssText = css;
-} else {
-  style.appendChild(document.createTextNode(css));
-}
-
-head.appendChild(style);
-
-
 var butonImp=document.getElementById('bouton');
-var pagecourante="http://localhost/premiere/Gestion-Simplon/tuteurs.php";
+
 butonImp.onclick=function(e){
     e.preventDefault;
     e.stopPropagation;
@@ -78,7 +63,7 @@ butonImp.onclick=function(e){
 }
 
 var inpute = document.getElementById('search');
-	searchbar.onkeyup=function() {
+	inpute.onkeyup=function() {
   // Declare variables
 
   

@@ -191,7 +191,7 @@ require_once 'connexion.php';
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h4 class="card-title">Apprenant</h4>
+        <h4 id="titreAp" class="card-title">Apprenant</h4>
         <label for="nom" class="card-text">Nom</label> <span id="nom">:</span> <br>
         <label class="card-text">Prénom</label><span id="prenom"> : </span> <br>
         <label class="card-text">Date de Naissance</label><span id="date_naiss"> : </span> <br>
