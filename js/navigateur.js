@@ -10,6 +10,7 @@ function cachertout(){
 	}
 }
 
+var searchbar=document.getElementById("search");
 function affiche(elem){
   elem.style="animation: ani1 1s ease-out";
   elem.style.display="flex";
@@ -20,18 +21,21 @@ function afficher(quoi){
 	if(quoi=="list" || quoi=="tableau" || quoi=="tab" || quoi=="liste"){
 glob[0].style="animation: ani1 1s ease-out";
         affiche(glob[0]);
+
 	}else if (quoi=="formulaire" || quoi=="formulair" || quoi=="form" || quoi=="forme") {
-        glob[1].style="animation: ani1 1s ease-out";
+        glob[1].style="animation: ani6 2s ease-out";
 affiche(glob[1]);
+searchbar.disabled="true";
 	}else if (quoi=="details" || quoi=="detailles" || quoi=="detailles" || quoi=="detaill") {
 		glob[2].style="animation: ani1 1s ease-out";
 affiche(glob[2]);
+searchbar.disabled="true";
 	}else{
+
 		var MsgErreur="Argument incorrecte\n '"+quoi+"' n'est pas un argument valid";
 		alert(MsgErreur);
 	}
 }
-
 
 var button=document.getElementById('sendTuteurs');
     

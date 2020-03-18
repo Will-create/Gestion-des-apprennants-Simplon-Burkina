@@ -39,7 +39,7 @@ CREATE TABLE `apprenants` (
   `formation` varchar(50) DEFAULT NULL,
   `etabliss` varchar(50) DEFAULT NULL,
   `contact` int(11) DEFAULT NULL,
-  `photo` tinyint(4) DEFAULT NULL
+  `photo` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --

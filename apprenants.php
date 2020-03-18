@@ -10,12 +10,14 @@ require_once 'connexion.php';
     <script type="text/javascript" src="js/jquery/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/apprenants.css">
+    <link rel="stylesheet" type="text/css" href="css/apprenants.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/impression.css" media="print">
     <title>Apprenants-Gestion-Simplon</title>
 </head>
 
 <body>
 <div class="container">
-	<nav class="navbar navbar-expand-lg navbar-light">
+	<nav id="entete" class="navbar navbar-expand-lg navbar-light">
     <a class="navbar-brand" href="index.php"><img class="logo" src="images/logo.png"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -27,7 +29,7 @@ require_once 'connexion.php';
       <li><a href="tuteurs.php">TUTEURS</a></li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input  id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
   </div>
 </nav>
@@ -42,18 +44,17 @@ require_once 'connexion.php';
       <th scope="col">N°</th>
       <th scope="col">Nom</th>
       <th scope="col">Prénom</th>
-      <th scope="col">Date naissance</th>
+      <th class="noprint" scope="col">Date naissance</th>
       <th scope="col">Genre</th>
       <th scope="col">Ville Origine</th>
       <th scope="col">Formation</th>
-      <th scope="col">Etablissement</th>
+      <th class="noprint" scope="col">Etablissement</th>
       <th scope="col">Tuteur</th>
       <th scope="col">Contact</th>
-      <th scope="col">Detail</th>
+      <th class="noprint" scope="col">Detail</th>
     </tr>
   </thead>
-  <tbody>
-  <tr>
+  <tbody id="tbody">
   <?php
     try
     {
@@ -82,14 +83,14 @@ require_once 'connexion.php';
         echo "<td> $i </td>";
         echo "<td> $donnees[nom] </td>";
         echo "<td> $donnees[prenom] </td>";
-        echo "<td> $donnees[date_naiss] </td>";
+        echo '<td  class="noprint">'. $donnees["date_naiss"].' </td>';
         echo "<td> $donnees[genre] </td>";
         echo "<td> $donnees[ville] </td>";
         echo "<td> $donnees[formation] </td>";
-        echo "<td> $donnees[etabliss] </td>";
+        echo '<td  class="noprint">'. $donnees["etabliss"].' </td>';
         echo "<td>".$nom."     ".$prenom."</td>";
         echo "<td> $donnees[contact] </td>";
-        echo '<td><img class="photoapprenant" src="images/edit_26px.png" onclick="afficher(\'details\')"/></td>';
+        echo '<td  class="noprint"><img class="photoapprenant" src="images/edit_26px.png" onclick="afficher(\'details\')"/></td>';
         echo '<td class="lienPhoto">'.$donnees["photo"].'</td>';
         echo "</tr>";
 
@@ -101,13 +102,14 @@ require_once 'connexion.php';
         die('Erreur : '.$e->getMessage());
     }
   ?>
-  </tr>
+
   </tbody>
 </table>
+<h1 id="erreurMsg" style="display: none">Aucun resultat</h1>
 </div>
 <div class="buttonap">
-     <button type="button" class="btn btn-danger btn-valid">Imprimer</button>
-     <button type="button" class="btn btn-danger btn-valid" onclick="afficher('formulaire')">Nouveau</button>
+     <button id="bouton" type="button" class="btn btn-danger btn-valid">Imprimer</button>
+     <button type="button" class="btn btn-danger btn-valid noprint" onclick="afficher('formulaire')">Nouveau</button>
 </div>
   </div>
 <div class="fils" id="formulaire">
@@ -154,7 +156,7 @@ require_once 'connexion.php';
      }
     //  $resultat->closeCursor();
      ?>
-     <option onclick="versFormtTuteur();">Nouveau tuteur</option>
+     <option  onclick="versFormtTuteur();">Nouveau tuteur</option>
       </select>
     </div>
   </div><br>
@@ -164,7 +166,7 @@ require_once 'connexion.php';
   <label class="form-check-label" for="inlineRadio1">Masculin</label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="sexe" id="inlineRadio2" value="Femme">
+  <input class="form-check-input" type="radio" name="sexe" id="inlineRadio2" value="Feminin">
   <label class="form-check-label" for="inlineRadio2">Feminin</label>
 </div>
   <div class="form-row">
@@ -190,14 +192,14 @@ require_once 'connexion.php';
     <div class="col-md-8">
       <div class="card-body">
         <h4 class="card-title">Apprenant</h4>
-        <label for="nom" class="card-text">nom</label> <span id="nom">:</span> <br>
-        <label class="card-text texto">prenom </label><span id="prenom"> : </span> <br>
-        <label class="card-text texto">date_nais </label><span id="date_naiss"> : </span> <br>
-        <label class="card-text texto">genre </label><span id="genre"> : </span> <br>
-        <label class="card-text texto">ville</label><span id="ville"> : </span> <br>
-        <label class="card-text texto">formation </label><span id="formation"> : </span> <br>
-        <label class="card-text texto">etabliss </label><span id="etabliss"> : </span> <br>
-        <label class="card-text texto">contact </label><span id="contact"> : </span> <br>
+        <label for="nom" class="card-text">Nom</label> <span id="nom">:</span> <br>
+        <label class="card-text">Prénom</label><span id="prenom"> : </span> <br>
+        <label class="card-text">Date de Naissance</label><span id="date_naiss"> : </span> <br>
+        <label class="card-text">Genre</label><span id="genre"> : </span> <br>
+        <label class="card-text">Ville d'origine</label><span id="ville"> : </span> <br>
+        <label class="card-text">Formation</label><span id="formation"> : </span> <br>
+        <label class="card-text">Etablissement</label><span id="etabliss"> : </span> <br>
+        <label class="card-text">Contact</label><span id="contact"> : </span> <br>
       </div>
     </div>
   </div>
@@ -207,11 +209,11 @@ require_once 'connexion.php';
     <div class="col-md-12">
       <div class="card-body">
         <h4 class="card-title">Tuteur</h4>
-        <label class="card-text">nom</label> <span id="nomtut"> :</span> <br>
-        <label class="card-text">prenom </label><span id="prenomtut"> :</span> <br>
-        <label class="card-text">profession </label><span id="professiontut"> : </span> <br>
-        <label class="card-text">genre </label><span id="genretut"> : </span> <br>
-        <label class="card-text">contact</label><span id="contacttut"> : </span> <br>
+        <label class="card-text">Nom</label> <span id="nomtut"> :</span> <br>
+        <label class="card-text">Prenom </label><span id="prenomtut"> :</span> <br>
+        <label class="card-text">Profession </label><span id="professiontut"> : </span> <br>
+        <label class="card-text">Genre </label><span id="genretut"> : </span> <br>
+        <label class="card-text">Contact</label><span id="contacttut"> : </span> <br>
         <span class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione dolores explicabo obcaecati 
         eaque ducimus veniam provident quisquam, delectus praesentium excepturi eveniet ut odit natus facere minima. Adipisci 
         eius quod accusamus.</span><br>
@@ -219,11 +221,14 @@ require_once 'connexion.php';
     </div>
   </div>
 </div>
-
 </div>
- <button type="button" onclick="afficher('liste')" class="btn btn-danger sbouton2" style="float:right; margin-bottom:10px;"> Retour</button>
+<button type="button" onclick="afficher('liste')" class="btn btn-danger sbouton2" style="float:right; margin-bottom:10px;"> Retour</button>
    </div>
 </div>
+   </div>
+</div>
+</div>
+ 
 <div id="footer">
 	<h4 style="color:white;">COPYRIGHT SIMPLON 2020</h4>
 </div>

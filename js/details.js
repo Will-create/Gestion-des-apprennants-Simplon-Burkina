@@ -50,3 +50,64 @@
 
 		
 	}
+	
+	
+	
+var css = '@page { size: landscape; }',
+    head = document.head || document.getElementsByTagName('head')[0],
+    style = document.createElement('style');
+
+style.type = 'text/css';
+style.media = 'print';
+
+if (style.styleSheet){
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+
+head.appendChild(style);
+
+
+var butonImp=document.getElementById('bouton');
+var pagecourante="http://localhost/premiere/Gestion-Simplon/tuteurs.php";
+butonImp.onclick=function(e){
+    e.preventDefault;
+    e.stopPropagation;
+    window.print();
+}
+
+var inpute = document.getElementById('search');
+	searchbar.onkeyup=function() {
+  // Declare variables
+
+  
+        var filter, tbody, tr, erreurMsg, td,td2, i,nom,prenom;
+  
+        filter = this.value.toUpperCase();
+        tbody= document.getElementById("tbody");
+        tr = tbody.getElementsByTagName('tr');
+        erreurMsg=document.getElementById('erreurMsg');
+        var tout=[];
+
+        for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[1];
+        td2 = tr[i].getElementsByTagName("td")[2];
+        nom = td.textContent || td.innerText;
+        prenom = td2.textContent || td2.innerText;
+        if (nom.toUpperCase().indexOf(filter)>-1 || prenom.toUpperCase().indexOf(filter)>-1) {
+      tr[i].style.display = "";
+      erreurMsg.style.display='none';
+      tout.shift(tr[i]);
+           }else {
+      tr[i].style.display = "none"; 
+      
+      tout.push(tr[i]);
+     if(tout.length==tr.length){
+  
+    erreurMsg.style.display='block';
+      }
+    }
+   }
+}
+	

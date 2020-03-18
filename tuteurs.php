@@ -12,6 +12,8 @@ require_once 'connexion.php';
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/tuteurs.css">
+    <link rel="stylesheet" type="text/css" href="css/apprenants.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/impression.css" media="print">
     <title>Tuteurs-Gestion-Simplon</title>
 </head>
 
@@ -29,7 +31,7 @@ require_once 'connexion.php';
       <li id="actif"><a href="tuteurs.php">TUTEURS</a></li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <input disabled="true" id="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     </form>
   </div>
 </nav>
@@ -71,7 +73,7 @@ require_once 'connexion.php';
           echo "<td> $donnees[profession] </td>";
           echo "<td> $donnees[genre] </td>";
           echo "<td> $donnees[contact] </td>";
-          echo '<td><img class="photoapprenant" src="images/edit_26px.png" onclick="afficher(\'details\')"/></td>';
+          echo '<td><img class="photoapprenant noprint" src="images/edit_26px.png" onclick="afficher(\'details\')"/></td>';
           echo "</tr>";
       }
       $sql->closeCursor();
@@ -86,7 +88,7 @@ require_once 'connexion.php';
 </table>
 </div>
 <div class="sbouton1"> 
-<button type="button" class="btn btn-danger sbouton2">Imprimer</button>
+<button id="bouton2" type="button" class="btn btn-danger sbouton2">Imprimer</button>
 <button type="button" onclick="afficher('formulaire')" class="btn btn-danger sbouton2">Nouveau</button>
 </div>
   </div>
@@ -128,6 +130,16 @@ require_once 'connexion.php';
 	<h4 style="color:white;">COPYRIGHT SIMPLON 2020</h4>
 </div>
 </div>
+<script type="text/javascript">
+  var butonImp2=document.getElementById('bouton2');
+
+butonImp2.onclick=function(e){
+    e.preventDefault;
+    e.stopPropagation;
+    window.print();
+}
+</script>
+
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/navigateur.js"></script>
 </body>
