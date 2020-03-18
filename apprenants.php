@@ -10,6 +10,7 @@ require_once 'connexion.php';
     <script type="text/javascript" src="js/jquery/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/apprenants.css">
+    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="css/apprenants.css" media="screen">
     <link rel="stylesheet" type="text/css" href="css/impression.css" media="print">
     <title>Apprenants-Gestion-Simplon</title>
@@ -111,10 +112,9 @@ require_once 'connexion.php';
      <button id="bouton" type="button" class="btn btn-danger btn-valid">Imprimer</button>
      <button type="button" class="btn btn-danger btn-valid noprint" onclick="afficher('formulaire')">Nouveau</button>
 </div>
-  </div>
+</div>
 <div class="fils" id="formulaire">
   <h1 id="bienvenu">Formulaire Apprenants</h1>
-  
     <form action="insertion-apprenants.php"method="post" enctype="multipart/form-data"> 
   <div class="row">
     <div class="col">
@@ -222,17 +222,16 @@ require_once 'connexion.php';
   </div>
 </div>
 </div>
-<button type="button" onclick="afficher('liste')" class="btn btn-danger sbouton2" style="float:right; margin-bottom:10px;"> Retour</button>
-   </div>
-</div>
-   </div>
+<div class="buttonap">
+<button type="button" onclick="afficher('liste')" class="btn btn-danger sbouton2" style="margin-bottom:10px; float:left;"> Retour</button>
 </div>
 </div>
- 
+
 <div id="footer">
 	<h4 style="color:white;">COPYRIGHT SIMPLON 2020</h4>
 </div>
 </div>
+
 <script type="text/javascript" src="js/navigateur.js"></script> 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/details.js"></script>

@@ -78,3 +78,20 @@ tr:hover{
 .lienPhoto{
 	display: none;
 }
+
+.sbouton2{
+		display: flex;
+		  margin-right: 10px;
+		  padding: 0.5em;
+		  color: white;
+		  
+	  
+	  
+	  }
+body{
+	font-family: 'Pathway Gothic One', sans-serif;
+}
+
+	
+	  
+  

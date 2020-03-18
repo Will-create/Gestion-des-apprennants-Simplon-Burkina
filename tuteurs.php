@@ -9,7 +9,7 @@ require_once 'connexion.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <script type="text/javascript" src="js/jquery/jquery.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto">
+    <link href="https://fonts.googleapis.com/css?family=Pathway+Gothic+One&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/tuteurs.css">
     <link rel="stylesheet" type="text/css" href="css/apprenants.css" media="screen">
@@ -88,8 +88,8 @@ require_once 'connexion.php';
 </table>
 </div>
 <div class="sbouton1"> 
-<button id="bouton2" type="button" class="btn btn-danger sbouton2">Imprimer</button>
-<button type="button" onclick="afficher('formulaire')" class="btn btn-danger sbouton2">Nouveau</button>
+<button id="bouton2" type="button" class="btn btn-danger sbouton2 noprint">Imprimer</button>
+<button type="button" onclick="afficher('formulaire')" class="btn btn-danger sbouton2 noprint">Nouveau</button>
 </div>
   </div>
 <div class="fils" id="formulaire">
